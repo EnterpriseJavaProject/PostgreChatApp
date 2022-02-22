@@ -10,6 +10,7 @@
   <div class="wrapper">
     <section class="form login">
     		<img src="AG-LOGO.png" style="margin-left:70px;" width="150px" height="150px" alt="Image">
+      <br><br>
       <header style="color:blue;text-align:center;">HGT BOLGA CHAT APP</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
