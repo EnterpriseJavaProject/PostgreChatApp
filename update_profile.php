@@ -19,19 +19,19 @@ if (isset($_POST['update_btn']))
     $phone = $_POST['edit_phone'];
     $usertype = $_POST['edit_usertype'];
     $tithe = $_POST['edit_tithe'];
-    //$new_img_name = $_FILES['image']['name'];
-
+    $new_img_name = $_FILES['image']['name'];
+    $tmp_name = $_FILES['image']['tmp_name'];
 
  
  
-                if(isset($_FILES['image'])){
-                    $img_name = $_FILES['image']['name'];
-                    $img_type = $_FILES['image']['type'];
-                    $tmp_name = $_FILES['image']['tmp_name'];
+               // if(isset($_FILES['image'])){
+                    //$img_name = $_FILES['image']['name'];
+                   // $img_type = $_FILES['image']['type'];
+                  //  $tmp_name = $_FILES['image']['tmp_name'];
                     
                     
           
-                    $new_img_name = $img_name;
+                   // $new_img_name = $img_name;
 
 
                             
@@ -43,7 +43,7 @@ if (isset($_POST['update_btn']))
 
     if ($query_run) 
     {   
-      $new_img_name = $img_name;
+     // $new_img_name = $img_name;
       move_uploaded_file($tmp_name,"".$new_img_name);
       $_SESSION['status'] = $username .   "---->  Your profile has been updated successfully";
       $_SESSION['status_code'] = "success";
@@ -63,7 +63,7 @@ if (isset($_POST['update_btn']))
 
 
 
-}
+//}
 }
 
 ?>
