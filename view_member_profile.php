@@ -60,7 +60,7 @@ include('includes/header.php');
 
 
 <div style="text-align:center;">
-
+<label>Profile Picture</label>
 <?php echo '<img src=" '.$row['img'].'" width="150px;" height="150px;" alt="Image">'?>
 
 </div>
@@ -68,17 +68,12 @@ include('includes/header.php');
 <br>
 
 <div class="form-group">
-    <input type="text" name="" id="username" value="<?php echo $row['username'] ?> Profile" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Full Name" required>
+	<label>Username</label>
+    <input type="text" name="" id="username" value="<?php echo $row['username'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Full Name" required>
     <span id="username_error_message" style="color:red;"></span>
 </div>
 
 
-
-<div class="form-group">
-    <label>Membership No</label>
-    <input type="text" name="edit_unique_id" value="<?php echo $row['unique_id'] ?>" class="form-control" disabled="disabled" readonly="true" autocomplete="off">
-    <span id="username_error_message" style="color:red;"></span>
-</div>
 
 
 
