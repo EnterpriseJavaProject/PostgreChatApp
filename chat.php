@@ -38,7 +38,7 @@
 
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
         
-        <a href="view_member_profile.php?profile_id=<?php echo $row['unique_id']; ?>" > 
+        <a href="view_member_profile.php?view_member_profile=<?php echo $row['unique_id']; ?>" > 
         <img src="<?php echo $row['img']; ?>" alt="">
         <div class="details">
 
