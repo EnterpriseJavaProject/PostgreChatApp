@@ -14,7 +14,7 @@
 
                 session_unset();
                 session_destroy();
-                header("location: login.php");
+                header("location: index.php");
             }
         }else{
             header("location: users.php");
@@ -22,6 +22,6 @@
     }else{ 
     
 	$sql = pg_query($conn, "UPDATE users SET status = 'Offline now' WHERE unique_id= '{$logout_id}'");
-        header("location: login.php");
+        header("location: index.php");
     }
 ?>
