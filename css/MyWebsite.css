@@ -1,0 +1,87 @@
+
+
+.p{padding: 120px;
+height: 50em;
+width: 50em;}
+
+    .SA {font-size: larger;font-weight: bolder;font-style: italic;margin-left: 20px;}
+    .ER {color:chocolate;
+        font-size: xx-large;
+        font-weight: bolder;
+        font-variant: initial;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-variant: initial;
+        font-stretch: wider;
+        background-color:yellowgreen;margin-left: 20px;}
+    
+        h1{
+            font-size: 4em;
+            color: #3060f0;
+            margin-left: 180px;
+        }
+        
+
+.otu-bar{
+    
+    /* background-color: #0001;
+    width: 100%; */
+    margin-left: 300px;
+    /* position: fixed; */
+    
+}
+
+.gh1, .otu-bar ul li:hover {
+    background: whitesmoke;
+    border-radius: 3px;
+    font-size: 20px; 
+
+}
+
+.otu-bar ul{
+        display: inline-flex;
+        list-style: none;
+        color: whitesmoke;
+        
+       
+}
+.otu-bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+.otu-bar ul li a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+
+.sub-menu-1{
+    display: none;
+}
+.otu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: #3060f0;
+    margin-top: 0;
+
+}
+.otu-bar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.otu-bar ul li:hover .sub-menu-1 li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    margin-right: 80px;
+}
+.otu-bar ul li:hover .sub-menu-1 li:last-child{
+    border-bottom: none;
+}
+.otu-bar ul li:hover .sub-menu-1 li a:hover{
+    color: whitesmoke;
+}

@@ -1,0 +1,222 @@
+h1{
+    font-size: 3em;
+    color: #3060f0;
+    margin-left: 80px;
+}
+
+
+
+h2{
+    font-size: 3.5em;
+    color: #3060f0;
+    margin-left: 80px;
+}
+
+h3{
+    font-size: 3em;
+    color: #3060f0;
+    margin-left: 200px;
+}
+
+h4{
+    color: #3060f0;
+}
+
+h5{
+    color: #3060f0;
+    font-size: 2em; 
+}
+
+
+
+th{
+    color: #3060f0;
+}
+
+
+
+.run{
+    margin-right: 200px;
+}       
+
+.otu-bar
+{   
+    text-align: center;   
+}
+.otu-bar ul{
+        display: inline-flex;
+        list-style: none;
+        color: #3060f0;
+        font-size: 30px;
+        margin-right: 40px;
+        
+}
+.otu-bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+.otu-bar ul li a{
+    text-decoration: none;
+    color: #3060f0;
+    font-size: 25px;
+
+}
+.gh, .otu-bar ul li:hover {
+    background: whitesmoke;
+    border-radius: 6px;
+    width: 300px;
+    
+}
+
+
+
+.otu-menu-1{
+    display: none;
+}
+.otu-bar ul li:hover .otu-menu-1{
+    display: block;
+    position: absolute;
+    background: lightsteelblue;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.otu-bar ul li:hover .otu-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.otu-bar ul li:hover .otu-menu-1 li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    margin-right: 100px;
+
+}
+.otu-bar ul li:hover .otu-menu-1 li:last-child{
+    border-bottom: none;
+}
+.otu-bar ul li:hover .otu-menu-1 li a:hover{
+    color: white;
+    
+}
+
+
+
+
+
+
+
+
+
+
+/* .chart2{
+    width: 600px;
+    height: 100px;
+    display: block;
+    margin-left: 80px;
+    padding-top: 30px;
+} */
+
+
+/* .chart{
+    width: 600px;
+    height: 300px;
+    display: block;
+    margin-right: 300px;
+    
+}
+
+.numbers{
+    color: maroon;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.numbers li{
+    list-style: none;
+    height: 150px;
+    position: relative;
+    bottom: 145px;
+}
+
+.numbers span{
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.bars{
+    color: #3060f0;
+    font-size: 12px;
+    font-weight: 600;
+    background: lightseagreen;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 330px;
+    height: 300px;
+    box-shadow: 0 0 10px 0 yellow;
+    border-radius: 5px;
+}
+
+.bars li{
+    display: table-cell;
+    width: 100px;
+    height: 300px;
+    position: relative;
+}
+
+.bars span{
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    text-align: center;
+}
+
+.bars .bar{
+    display: block;
+    background: #55EFC4;
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 25px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 red;
+    transition: 0.5s;
+    transition-property: background, box-shadow;
+}
+
+.bars .bar:hover{
+    background: aqua;
+    box-shadow: 0 0 10px 0 black;
+    cursor: pointer;
+}
+
+.bars .bar:before{
+    color: white;
+    content: attr(data-percentage) '%';
+    position: relative;
+    bottom: 20px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

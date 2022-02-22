@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Bar</title>
+    <link rel="stylesheet" href="css/Home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="UTF-8"></script>
+</head>
+<body>
+    <!-- Chart Starts -->
+
+    <div class="chart">
+        <ul class="numbers">
+            <li><span>100%</span></li>
+            <li><span>50%</span></li>
+            <li><span>0%</span></li>
+
+        </ul>
+        <ul class="bars">
+            <li><div class="bar" data-percentage="50"></div><span>option 01</span></li>
+            <li><div class="bar" data-percentage="30"></div><span>option 02</span></li>
+            <li><div class="bar" data-percentage="60"></div><span>option 03</span></li>
+            <li><div class="bar" data-percentage="100"></div><span>option 04</span></li>
+            <li><div class="bar" data-percentage="80"></div><span>option 05</span></li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- Chart Ends -->
+
+    <script type="text/javascript">
+    $(function(){
+        $('.bars li .bar').each(function(key, bar){
+            var percentage = $(this).data('percentage');
+            $(this).animate({
+                'height' : percentage + '%'
+            },1000);
+
+        });
+    });
+
+    </script>
+
+    
+</body>
+</html>
