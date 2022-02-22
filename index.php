@@ -23,7 +23,7 @@
 
         </div>
         <div class="field button">
-          <input type="submit" name="submit" value="Continue to Chat">
+          <input type="submit" name="submit" value="LOGIN TO START CHAT">
         </div>
       </form>
       <!---
