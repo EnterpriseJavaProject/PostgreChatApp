@@ -28,9 +28,11 @@ include('includes/header.php');
 
                // $connection = mysqli_connect("localhost","root","","chatapp");
                 // $connection = mysqli_connect("sql206.ezyro.com", "ezyro_29068185", "mc3a3pix", "ezyro_29068185_assemblies_Of_God");
-                
-                 //$profile_id = mysqli_real_escape_string($conn, $_GET['profile_id']);
-                 $view_member_profile = $_SESSION['unique_id'];
+                         //$view_member_profile = $_SESSION['unique_id'];
+                         
+                         
+                 $view_member_profile = pg_escape_string($conn, $_GET['view_member_profile']);
+        
                  
                  if(isset($view_member_profile))
            {
@@ -39,11 +41,11 @@ include('includes/header.php');
                 //$query = "SELECT * FROM users WHERE unique_id = '$profile_id' ";
                 //$query_run = mysqli_query($conn, $query);
                 
-                $sql = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$view_member_profile}' ");
+                $query = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$view_member_profile}' ");
                 
-                       if(pg_num_rows($sql) > 0){
+                       if(pg_num_rows($query) > 0){
                        
-              			$row = pg_fetch_assoc($sql);
+              			$row = pg_fetch_assoc($query);
            	       }
 
 
