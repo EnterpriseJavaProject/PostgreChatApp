@@ -43,12 +43,14 @@ if (isset($_POST['update_btn']))
 
     if ($query_run) 
     {   
+      $new_img_name = $img_name;
       move_uploaded_file($tmp_name,"".$new_img_name);
       $_SESSION['status'] = $username .   "---->  Your profile has been updated successfully";
       $_SESSION['status_code'] = "success";
       header('Location: users.php');
 
     }
+
     else
     {
       $_SESSION['status'] = "Profile not updated";
