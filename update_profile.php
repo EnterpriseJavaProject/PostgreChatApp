@@ -30,14 +30,8 @@ if (isset($_POST['update_btn']))
                     $tmp_name = $_FILES['image']['tmp_name'];
                     
                     
-                    $img_explode = explode('.',$img_name);
-                    $img_ext = end($img_explode);
-    
-                    $extensions = ["jpeg", "png", "jpg"];         
-                    if(in_array($img_ext, $extensions) === true){
-                    $types = ["image/jpeg", "image/jpg", "image/png"]; 
-                        if(in_array($img_type, $types) === true){
-                            $new_img_name = $time.$img_name;
+          
+                    $new_img_name = $img_name;
 
 
                             
@@ -63,11 +57,10 @@ if (isset($_POST['update_btn']))
     }
 
  
- 
- 
 
-}
-}
+
+
+
 }
 }
 
