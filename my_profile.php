@@ -99,13 +99,9 @@ include('includes/header.php');
 
 <div class="form-group">
     <label>Gender</label>
-    <!-- <input type="text" name="edit_gender" value="" class="form-control"> -->
-    <select name="edit_gender" class="form-control" disabled="disabled" readonly="true" required>
-            <option value="<?php echo $row['gender'] ?>"> <?php echo $row['gender'] ?> </option>
-            <option>Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
+    <input type="phone" name="edit_phone" id="phone" value="<?php echo $row['gender'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off"  required>
+    <span id="phone_error_message" style="color: red;"></span>
+
 </div>
 
 
@@ -126,29 +122,8 @@ include('includes/header.php');
 
 <div class="form-group">
     <label>Department</label>
-    <!-- <input type="text" name="edit_department" value="" class="form-control" placeholder="Enter Register 2019" required> -->
-    <select name="edit_department" class="form-control" disabled="disabled" readonly="true" required>
-    <option value="<?php echo $row['department'] ?>"> <?php echo $row['department'] ?> </option>
-            <option>Select Department</option>
-            <option value="Angelic Voices">Angelic Voices</option>
-            <option value="Children">Children</option>
-            <option value="Cleaning">Cleaning</option>
-            <option value="Healing Voices">Healing Voices</option>
-            <option value="Joy Fellowship">Joy Fellowship</option>
-            <option value="Men Ministry">Men Ministry</option>
-            <option value="Music">Music</option>
-            <option value="Women Ministry">Women Ministry</option>
-            <option value="Mission Team">Mission Team</option>
-            <option value="PathFinders">PathFinders</option>
-            <option value="Royal Rangers">Royal Rangers</option>
-            <option value="Ushering">Ushering</option>
-            <option value="Sunday School">Sunday School</option>
-            <option value="Young Singles">Young Singles</option>
-            <option value="Youth Ministry">Youth Ministry</option>
-            <option value="Media">Media</option>
-            <option value="IT">IT</option>
-            <option value="None">None</option>
-        </select>	
+    <input type="text" name="edit_occupation" id="occupation" value="<?php echo $row['department'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Occupation" required>
+    <span id="occupation_error_message" style="color:red;"></span>
 </div>
 
 
