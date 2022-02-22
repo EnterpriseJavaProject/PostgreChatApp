@@ -30,16 +30,16 @@ include('includes/header.php');
                 // $connection = mysqli_connect("sql206.ezyro.com", "ezyro_29068185", "mc3a3pix", "ezyro_29068185_assemblies_Of_God");
                 
                  //$profile_id = mysqli_real_escape_string($conn, $_GET['profile_id']);
-                 $profile_id = $_SESSION['unique_id'];
+                 $view_member_profile = $_SESSION['unique_id'];
                  
-                 if(isset($profile_id))
+                 if(isset($view_member_profile))
            {
                 //$profile_id = $_POST['profile_id'];
             
                 //$query = "SELECT * FROM users WHERE unique_id = '$profile_id' ";
                 //$query_run = mysqli_query($conn, $query);
                 
-                $sql = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$profile_id}' ");
+                $sql = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$view_member_profile}' ");
                 
                        if(pg_num_rows($sql) > 0){
                        
