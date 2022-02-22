@@ -50,9 +50,9 @@
              <p style="color:black;">  Last seen
           	<?php
           	
-                      $connection = pg_connect("localhost","root","","chatapp");  
+                      //$connection = pg_connect("localhost","root","","chatapp");  
                       $query = "SELECT lastactivity FROM users WHERE unique_id = '{$user_id}'";
-                      $query_run = pg_query($connection, $query);
+                      $query_run = pg_query($conn, $query);
                       $row = pg_fetch_array($query_run);
 		      echo $row['lastactivity'];
                 ?>
