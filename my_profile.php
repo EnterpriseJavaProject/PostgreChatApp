@@ -24,13 +24,15 @@ include('includes/header.php');
         </div>
         <div class="card-body">
 
-        <?php
+<?php
 
                // $connection = mysqli_connect("localhost","root","","chatapp");
                 // $connection = mysqli_connect("sql206.ezyro.com", "ezyro_29068185", "mc3a3pix", "ezyro_29068185_assemblies_Of_God");
-                
-                 //$profile_id = mysqli_real_escape_string($conn, $_GET['profile_id']);
-                 $profile_id = $_SESSION['unique_id'];
+                         //$view_member_profile = $_SESSION['unique_id'];
+                         
+                         
+                 $profile_id = pg_escape_string($conn, $_GET['profile_id']);
+        
                  
                  if(isset($profile_id))
            {
