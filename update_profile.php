@@ -40,7 +40,7 @@ if (isset($_POST['update_btn']))
                             $new_img_name = $time.$img_name;
 
 
-                            if(move_uploaded_file($tmp_name,"".$new_img_name)){
+                            
                             
                             
                                                        
@@ -49,6 +49,7 @@ if (isset($_POST['update_btn']))
 
     if ($query_run) 
     {   
+      move_uploaded_file($tmp_name,"".$new_img_name)
       $_SESSION['status'] = $username .   "---->  Your profile has been updated successfully";
       $_SESSION['status_code'] = "success";
       header('Location: users.php');
@@ -63,7 +64,7 @@ if (isset($_POST['update_btn']))
 
  
  
- }
+ 
 
 }
 }
