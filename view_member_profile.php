@@ -62,7 +62,7 @@ include('includes/header.php');
 <div style="text-align:center;">
 <label>Profile Picture</label>
 	<br>
-<?php echo '<img src=" '.$row['img'].'" width="150px;" height="150px;" alt="Image">'?>
+<?php echo '<img src=" '.$row['img'].'" width="300px;" height="200px;" alt="Image">'?>
 
 </div>
 
@@ -77,13 +77,6 @@ include('includes/header.php');
 
 
 
-
-<div class="form-group">
-    <label>Phone Number</label>
-    <input type="phone" name="edit_phone" id="phone" value="<?php echo $row['phone'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Phone Number" required>
-    <span id="phone_error_message" style="color: red;"></span>
-
-</div>
 
 
 <div class="form-group">
