@@ -62,7 +62,7 @@ include('includes/header.php');
 <div style="text-align:center;">
 <label>Profile Picture</label>
 	<br>
-<?php echo '<img src=" '.$row['img'].'" width="300px;" height="200px;" alt="Image">'?>
+<?php echo '<img src=" '.$row['img'].'" width="200px;" height="200px;" alt="Image">'?>
 
 </div>
 
