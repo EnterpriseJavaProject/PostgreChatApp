@@ -180,7 +180,7 @@ sendBtn.onclick = ()=>{
               var element = $('#emoji').emojioneArea();
 	      element[0].emojioneArea.setText('');
               scrollToBottom();
-		  scrollToTop();
+	
           }
       }
     }
@@ -208,7 +208,7 @@ setInterval(() =>{
             chatBox.innerHTML = data;
             if(!chatBox.classList.contains("active")){
                 scrollToBottom();
-		    scrollToTop();
+
               }
           }
       }
@@ -221,9 +221,7 @@ function scrollToBottom(){
     chatBox.scrollTop = chatBox.scrollHeight;
   }
   
-function scrollToTop(){
-    chatBox.scrollBottom = chatBox.scrollHeight;
-  }
+
 
 });
 
