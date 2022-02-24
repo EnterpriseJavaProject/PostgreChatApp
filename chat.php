@@ -80,7 +80,9 @@
       </div>
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" id="emoji" class="input-field" placeholder="Type a message here..." autocomplete="off">
+       <textarea type="text" name="message" id="emoji" class="input-field chat_message" placeholder="Type a message here..." autocomplete="off" rows="4" cols="50">
+
+</textarea>
 
 
     
