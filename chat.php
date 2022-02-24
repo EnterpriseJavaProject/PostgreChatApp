@@ -6,6 +6,16 @@
   }
 ?>
 <?php include_once "header.php"; ?>
+
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+
 <body>
 
 <style>
@@ -70,14 +80,14 @@
       </div>
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+        <input type="text" name="message" id="emoji" class="input-field" placeholder="Type a message here..." autocomplete="off">
 
 
     
 
 
     
-     <button style="background-color:blue;"><i class="fab fa-telegram-plane"></i></button>
+     <button style="background-color:blue;" class="start_chat" data-touserid="'.$row['user_id'].'" data-tousername="'.$row['username'].'"><i class="fab fa-telegram-plane"></i></button>
         
       </form>
     </section>
@@ -127,11 +137,16 @@ var state = false;
 <script>
 
 
+$(document).ready(function(){
 const form = document.querySelector(".typing-area"),
 incoming_id = form.querySelector(".incoming_id").value,
 inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box");
+
+
+		
+
 
 form.onsubmit = (e)=>{
     e.preventDefault();
@@ -139,9 +154,18 @@ form.onsubmit = (e)=>{
 
 inputField.focus();
 inputField.onkeyup = ()=>{
+
+
+ 
     if(inputField.value != ""){
-        sendBtn.classList.add("active");
-    }else{
+    
+        $('#emoji').emojioneArea({
+	pickerPosition:"top",
+	toneStyle: "bullet"
+	});
+    	sendBtn.classList.add("active");
+    }
+    else{
         sendBtn.classList.remove("active");
     }
 }
@@ -153,13 +177,18 @@ sendBtn.onclick = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               inputField.value = "";
+              var element = $('#emoji').emojioneArea();
+	      element[0].emojioneArea.setText('');
               scrollToBottom();
           }
       }
     }
     let formData = new FormData(form);
     xhr.send(formData);
+
 }
+
+
 chatBox.onmouseenter = ()=>{
     chatBox.classList.add("active");
 }
@@ -191,6 +220,8 @@ function scrollToBottom(){
   }
   
 
+
+});
 
 </script>
 
