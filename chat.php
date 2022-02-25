@@ -60,10 +60,10 @@
     <section class="chat-area">
       <header>
         <?php 
-          $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = '{$user_id}'");
-          if(mysqli_num_rows($sql) > 0){
-            $row = mysqli_fetch_assoc($sql);
+          $user_id = pg_escape_string($conn, $_GET['user_id']);
+          $sql = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$user_id}'");
+          if(pg_num_rows($sql) > 0){
+            $row = pg_fetch_assoc($sql);
           }else{
             header("location: users.php");
           }
