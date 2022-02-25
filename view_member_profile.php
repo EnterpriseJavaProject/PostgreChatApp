@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once "config.php";
+//include_once "config.php";
 include('includes/header.php');
 //include('includes/navbar.php');
 ?>
@@ -26,7 +26,7 @@ include('includes/header.php');
 
         <?php
 
- 
+ $conn = pg_connect("host=ec2-3-212-143-188.compute-1.amazonaws.com port=5432 dbname=dfmlibde0ugb8m user=zvgmbzipahfthh password=4d0f3e0f3b2857779e9a29cc9ad00865670b7970d3a8bedf8a495d7158d5440f");
                          
                  $view_member_profile = pg_escape_string($conn, $_GET['view_member_profile']);
         
