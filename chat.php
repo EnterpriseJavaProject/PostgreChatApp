@@ -7,7 +7,6 @@
 ?>
 <?php include_once "header.php"; ?>
 
-
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  
         <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
@@ -15,7 +14,7 @@
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-
+  		
 <body>
 
 <style>
@@ -30,16 +29,41 @@
    font-size: 30px;
    color: black;
    }
-   
+   .image_upload
+{
+	position: absolute;
+	top:7px;
+	right:70px;
+}
+.image_upload > form > input
+{
+    display: none;
+}
+
+.image_upload img
+{
+    width: 24px;
+    cursor: pointer;
+}
+
+.chat_message_area
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
    </style>
   <div class="wrapper">
     <section class="chat-area">
       <header>
         <?php 
-          $user_id = pg_escape_string($conn, $_GET['user_id']);
-          $sql = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$user_id}'");
-          if(pg_num_rows($sql) > 0){
-            $row = pg_fetch_assoc($sql);
+          $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = '{$user_id}'");
+          if(mysqli_num_rows($sql) > 0){
+            $row = mysqli_fetch_assoc($sql);
           }else{
             header("location: users.php");
           }
@@ -48,7 +72,7 @@
 
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
         
-        <a href="view_member_profile.php?view_member_profile=<?php echo $row['unique_id']; ?>" > 
+        <a href="view_member_profile.php?profile_id=<?php echo $row['unique_id']; ?>" > 
         <img src="<?php echo $row['img']; ?>" alt="">
         <div class="details">
 
@@ -60,14 +84,19 @@
              <p style="color:black;">  Last seen
           	<?php
           	
-                      //$connection = pg_connect("localhost","root","","chatapp");  
+                      //$connection = mysqli_connect("localhost","root","","chatapp");  
                       $query = "SELECT lastactivity FROM users WHERE unique_id = '{$user_id}'";
-                      $query_run = pg_query($conn, $query);
-                      $row = pg_fetch_array($query_run);
+                      $query_run = mysqli_query($conn, $query);
+                      $row = mysqli_fetch_array($query_run);
 		      echo $row['lastactivity'];
+		      
+		      
+		    
                 ?>
             </p>
-          
+  
+      
+      
         </div>
         
         
@@ -78,24 +107,35 @@
 
  
       </div>
-      <form action="#" class="typing-area">
-        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+	<div class="form-group">
+
+		<div class="chat_message_area">
+		
+		   <form class="typing-area" action="#">
+		   
+		        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+		        
        <textarea type="text" name="message" id="emoji" class="input-field chat_message" placeholder="Type a message here..." autocomplete="off" rows="4" cols="50">
 
 </textarea>
-
-
-    
-
-
-    
      <button style="background-color:blue;" class="start_chat" data-touserid="'.$row['user_id'].'" data-tousername="'.$row['username'].'"><i class="fab fa-telegram-plane"></i></button>
-        
-      </form>
+   
+	</form>	   
+			<div class="image_upload">
+				<form class="typing-area" id="uploadImage"  method="post" action="upload.php">
+				<input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+					<label for="uploadFile"><img src="upload.png"  /></label>
+					
+		<input type="file" name="uploadFile" class="input-field-image" id="uploadFile" accept=".jpg, .png" />
+		
+				</form>
+			</div>
+		</div>
+	</div>
+      
+	
     </section>
   </div>
-
-
 
 
 
@@ -136,10 +176,13 @@ var state = false;
 
 
 
+
+
 <script>
 
-
 $(document).ready(function(){
+
+
 const form = document.querySelector(".typing-area"),
 incoming_id = form.querySelector(".incoming_id").value,
 inputField = form.querySelector(".input-field"),
@@ -147,24 +190,31 @@ sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box");
 
 
-		
 
+	$('#uploadFile').on('change', function(){
+		$('#uploadImage').ajaxSubmit({
+			target: ".chat-box",
+			resetForm: true
+		});
+	});
 
 form.onsubmit = (e)=>{
+
     e.preventDefault();
 }
+
 
 inputField.focus();
 inputField.onkeyup = ()=>{
 
-
  
     if(inputField.value != ""){
     
-        $('#emoji').emojioneArea({
+            $('#emoji').emojioneArea({
 	pickerPosition:"top",
 	toneStyle: "bullet"
 	});
+
     	sendBtn.classList.add("active");
     }
     else{
@@ -182,9 +232,10 @@ sendBtn.onclick = ()=>{
               var element = $('#emoji').emojioneArea();
 	      element[0].emojioneArea.setText('');
               scrollToBottom();
-	
+   
           }
       }
+      
     }
     let formData = new FormData(form);
     xhr.send(formData);
@@ -210,7 +261,7 @@ setInterval(() =>{
             chatBox.innerHTML = data;
             if(!chatBox.classList.contains("active")){
                 scrollToBottom();
-
+          
               }
           }
       }
@@ -225,8 +276,8 @@ function scrollToBottom(){
   
 
 
-});
 
+});
 </script>
 
 </body>
