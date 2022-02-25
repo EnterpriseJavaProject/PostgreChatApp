@@ -86,8 +86,8 @@
           	
                       //$connection = mysqli_connect("localhost","root","","chatapp");  
                       $query = "SELECT lastactivity FROM users WHERE unique_id = '{$user_id}'";
-                      $query_run = mysqli_query($conn, $query);
-                      $row = mysqli_fetch_array($query_run);
+                      $query_run = pg_query($conn, $query);
+                      $row = pg_fetch_array($query_run);
 		      echo $row['lastactivity'];
 		      
 		      
