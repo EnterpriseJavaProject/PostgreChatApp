@@ -26,20 +26,14 @@ include('includes/header.php');
 
         <?php
 
-               // $connection = mysqli_connect("localhost","root","","chatapp");
-                // $connection = mysqli_connect("sql206.ezyro.com", "ezyro_29068185", "mc3a3pix", "ezyro_29068185_assemblies_Of_God");
-                         //$view_member_profile = $_SESSION['unique_id'];
-                         
+ 
                          
                  $view_member_profile = pg_escape_string($conn, $_GET['view_member_profile']);
         
                  
                  if(isset($view_member_profile))
            {
-                //$profile_id = $_POST['profile_id'];
-            
-                //$query = "SELECT * FROM users WHERE unique_id = '$profile_id' ";
-                //$query_run = mysqli_query($conn, $query);
+
                 
                 $query = pg_query($conn, "SELECT * FROM users WHERE unique_id = '{$view_member_profile}' ");
                 
@@ -49,8 +43,7 @@ include('includes/header.php');
            	       }
 
 
-              //  foreach($query_run as $row)
-           // {
+          
         ?>
 
 
@@ -60,21 +53,17 @@ include('includes/header.php');
 
 
 <div style="text-align:center;">
-<label>Profile Picture</label>
-	<br>
-<?php echo '<img src=" '.$row['img'].'" width="200px;" height="200px;" alt="Image">'?>
+
+<?php echo '<img src=" '.$row['img'].'" width="150px;" height="150px;" alt="Image">'?>
 
 </div>
 
 <br>
 
 <div class="form-group">
-	<label>Username</label>
-    <input type="text" name="" id="username" value="<?php echo $row['username'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Full Name" required>
+    <input type="text" name="" id="username" value="<?php echo $row['username'] ?> Profile" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Full Name" required>
     <span id="username_error_message" style="color:red;"></span>
 </div>
-
-
 
 
 
@@ -91,43 +80,11 @@ include('includes/header.php');
 
 
 <div class="form-group">
-    <label>Occupation</label>
-    <input type="text" name="edit_occupation" id="occupation" value="<?php echo $row['occupation'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Occupation" required>
-    <span id="occupation_error_message" style="color:red;"></span>
-</div>
-
-
-<div class="form-group">
     <label>Department</label>
     <input type="text" name="edit_occupation" id="occupation" value="<?php echo $row['department'] ?>" disabled="disabled" readonly="true" class="form-control" autocomplete="off" placeholder="Enter Occupation" required>
     <span id="occupation_error_message" style="color:red;"></span>
 </div>
 
-
-
-
-<div class="form-group">
-    <label>Residence</label>
-    <input type="text" name="edit_residence" id="residence" value="<?php echo $row['residence'] ?>"  disabled="disabled" readonly="true" class="form-control"   autocomplete="off" placeholder="Enter Residence">
-            <span id="residence_error_message" style="color:red;"></span>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="form-group">
-    <label>Tithe(Ghc)</label>
-    <input type="text" name="edit_tithe" id="tithe" value="<?php echo $row['tithe'] ?>" class="form-control" autocomplete="off" placeholder="Enter Tithe" required>
-    <span id="tithe_error_message" style="color:red;"></span>
-
-</div> -->
 
 
 
@@ -143,7 +100,7 @@ include('includes/header.php');
 </form>
 
             <?php
-                //}
+            
                 }
             ?>
 
@@ -288,12 +245,6 @@ function validate(){
 	
 }
 </script>
-
-
-
-
-
-
 
 
 
