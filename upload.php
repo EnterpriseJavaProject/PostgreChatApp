@@ -10,9 +10,10 @@ if(!empty($_FILES))
 		$allow_ext = array('jpg', 'png');
 		if(in_array($ext, $allow_ext))
 		{
-			$_source_path = $_FILES['uploadFile']['tmp_name'];
-			$target_path = '' . $_FILES['uploadFile']['name'];
-			if(move_uploaded_file($_source_path, $target_path))
+			$_file_name = $_FILES['uploadFile']['name'];
+			$target_path = $_FILES['uploadFile']['tmp_name'];
+			
+			if(move_uploaded_file($target_path,"" $_file_name))
 			{
 				echo '<p><img src="'.$target_path.'" class="img-thumbnail" width="200" height="160" /></p><br />';
 			}
