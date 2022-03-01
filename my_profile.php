@@ -61,8 +61,10 @@ include('includes/header.php');
 
 <div class="form-group">
     <label>Change Profile Picture</label>
-
-<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg">
+	
+<img src="" alt="" id="cimg" width="100px;" height="100px;">
+	
+<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg" onchange="displayImg(this,$(this))">
 
 </div>
 
@@ -185,7 +187,20 @@ include('includes/header.php');
 
 
 
+<script>
 
+   function displayImg(input,_this) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#cimg').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+</script>
 
 
 <script>
