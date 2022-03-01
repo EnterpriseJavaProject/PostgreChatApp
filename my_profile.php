@@ -64,7 +64,8 @@ include('includes/header.php');
   <label style="text-align:center;">Change Profile Picture</label>
 <div style="text-align:center;">
 <br>
-<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg" onchange="displayImg(this,$(this))">
+
+    <input type="file" name="image"  id="edit_faculty_image" class="form-control" onchange="displayImg(this,$(this))">	
 	
 <img src="" alt="" id="cimg" width="100px;" height="100px;">
 	
