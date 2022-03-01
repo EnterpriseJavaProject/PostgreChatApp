@@ -58,21 +58,16 @@ include('includes/header.php');
 <input type="hidden" name="user_id" value="<?php echo $row['user_id'] ?>" >
 
 
+
+
+	
   <label style="text-align:center;">Change Profile Picture</label>
-<div class="form-group" style="text-align:center;">
-
-<img src="" alt="" id="cimg" width="100px;" height="100px;">
-	<br>
-<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg" onchange="displayImg(this,$(this))">
-
-</div>
-
-<br>
-
 <div style="text-align:center;">
-
-<?php echo '<img src=" '.$row['img'].'" width="150px;" height="150px;" alt="Image">'?>
-
+<br>
+<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg" onchange="displayImg(this,$(this))">
+	
+<img src="" alt="" id="cimg" width="100px;" height="100px;">
+	
 </div>
 
 <br>
