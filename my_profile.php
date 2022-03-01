@@ -59,17 +59,16 @@ include('includes/header.php');
 
 
 
+<div class="form-group" style="text-align:center;">
+    <label style="text-align:center;">Change Profile Picture</label>
 
-	
-  <label style="text-align:center;">Change Profile Picture</label>
-<div style="text-align:center;">
-<br>
+    <input type="file" name="image"  id="edit_faculty_image" class="form-control" onchange="displayImg(this,$(this))">
 
-    <input type="file" name="image"  id="edit_faculty_image" class="form-control" onchange="displayImg(this,$(this))">	
-	
-<img src="" alt="" id="cimg" width="100px;" height="100px;">
-	
+	<img src="" alt="" id="cimg" width="100px;" height="100px;">
 </div>
+	
+	
+	
 
 <br>
 
@@ -196,6 +195,7 @@ include('includes/header.php');
 }
 
 </script>
+
 
 
 <script>
