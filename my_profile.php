@@ -59,7 +59,7 @@ include('includes/header.php');
 
 
   <label>Change Profile Picture</label>
-<div class="form-group">
+<div class="form-group" style="text-align:center;">
 
 <img src="" alt="" id="cimg" width="100px;" height="100px;">
 	
