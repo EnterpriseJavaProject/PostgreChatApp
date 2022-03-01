@@ -60,15 +60,19 @@ include('includes/header.php');
 
 
 <div class="form-group" style="text-align:center;">
-    <label style="text-align:center;">Change Profile Picture</label>
+    <label>Change Profile Picture</label>
 
-    <input type="file" name="image"  id="edit_faculty_image" class="form-control" onchange="displayImg(this,$(this))">
+<input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg">
 
-	<img src="" alt="" id="cimg" width="100px;" height="100px;">
 </div>
-	
-	
-	
+
+<br>
+
+<div style="text-align:center;">
+
+<?php echo '<img src=" '.$row['img'].'" width="150px;" height="150px;" alt="Image">'?>
+
+</div>
 
 <br>
 
