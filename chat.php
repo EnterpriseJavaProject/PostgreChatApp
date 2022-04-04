@@ -121,7 +121,7 @@
      <button style="background-color:blue;" class="start_chat" data-touserid="'.$row['user_id'].'" data-tousername="'.$row['username'].'"><i class="fab fa-telegram-plane"></i></button>
    
 	</form>	   
-			<div class="image_upload">
+<!-- <div class="image_upload">
 				<form class="typing-area" id="uploadImage"  method="post" action="upload.php">
 				<input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
 					<label for="uploadFile"><img src="upload.png"  /></label>
@@ -129,7 +129,7 @@
 		<input type="file" name="uploadFile" class="input-field-image" id="uploadFile" accept=".jpg, .png" />
 		
 				</form>
-			</div>
+			</div> -->
 		</div>
 	</div>
       
